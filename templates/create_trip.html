@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Создать запись о путешествии</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.title.label }} {{ form.title() }}
+        </div>
+        <div>
+            {{ form.location.label }} {{ form.location() }}
+        </div>
+        <div>
+            {{ form.latitude.label }} {{ form.latitude() }}
+        </div>
+        <div>
+            {{ form.longitude.label }} {{ form.longitude() }}
+        </div>
+        <div>
+            {{ form.description.label }} {{ form.description() }}
+        </div>
+        <div>
+            {{ form.cost.label }} {{ form.cost() }}
+        </div>
+        <div>
+            {{ form.image.label }} {{ form.image() }}
+        </div>
+        <div>
+            {{ form.transport_rating.label }} {{ form.transport_rating() }}
+        </div>
+        <button type="submit">Создать</button>
+    </form>
+{% endblock %}
