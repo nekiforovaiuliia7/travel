@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Последние записи</h2>
+    {% for trip in trips %}
+        <div class="trip">
+            <h3><a href="{{ url_for('view_trip', trip_id=trip.id) }}">{{ trip.title }}</a></h3>
+            <p>{{ trip.description }}</p>
+            <small>Автор: {{ trip.author.username }} | {{ trip.created_at }}</small>
+        </div>
+    {% endfor %}
+{% endblock %}
