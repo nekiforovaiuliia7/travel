@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>{{ trip.title }}</h2>
+    <p>{{ trip.description }}</p>
+    <p><strong>Местоположение:</strong> {{ trip.location }}</p>
+    <p><strong>Стоимость:</strong> {{ trip.cost }}</p>
+    <p><strong>Оценка удобства передвижения:</strong> {{ trip.transport_rating }}</p>
+    {% if trip.image %}
+        <img src="{{ url_for('static', filename='uploads/' + trip.image) }}" alt="Изображение места" width="300">
+    {% endif %}
+    <small>Автор: {{ trip.author.username }} | {{ trip.created_at }}</small>
+{% endblock %}
